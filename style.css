@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+    /* primary colors */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+
+    /* neutral colors */
+    --dark-grayish-red: hsl(0, 6%, 24%);
+
+    /* gradients */
+    --gradient-color-1: hsl(0, 0%, 100%);
+    --gradient-color-2: hsl(0, 100%, 98%);
+
+    --gradient-color-3: hsl(0, 80%, 86%);
+    --gradient-color-4: hsl(0, 74%, 74%);
+
+    /* typography */
+    --fs-default: 16px;
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-600: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    min-height: 100svh;
+    width: 100%;
+}
+
+/* desktop design */
+.mobile-nav,
+.mobile_hero_img
+{
+    display: none;
+}
+
+.hero_container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main_text {
+    padding-inline: 8rem;
+}
+
+.main_text .desktop_logo {
+    position: absolute;
+    top: 2.45rem;
+}
+
+.main_text .text h1 {
+    letter-spacing: 10px;
+    font-size: 4rem;
+}
+
+.main_text .text h1 span {
+    color: var(--desaturated-red);
+    font-weight: var(--fw-300);
+}
+
+.main_text .text p {
+    color: var(--desaturated-red);
+    line-height: 2rem;
+    font-size: var(--fs-default);
+    padding-block: 1.23rem;
+}
+
+.main_text .form {
+    display: flex;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 2rem;
+    justify-content: space-between;
+}
+
+.main_text .form input {
+    padding: .94rem;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    width: 315px;
+}
+
+.main_text .form input:active {
+    border: none;
+}
+
+.main_text .form input::placeholder {
+    color: var(--desaturated-red);
+    padding-left: 1rem;
+}
+
+.main_text .form .cta {
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, var(--gradient-color-3), var(--gradient-color-4));
+    padding: .94rem;
+    width: 100px;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+/* img container */
+.desktop_hero_img {
+    width: 100%;
+}
+
+/* mobile design */
+@media (max-width: 35em) {
+    /* navbar */
+    .mobile-nav {
+        display: block;
+        padding: 2rem;
+    }
+    /* hero container */
+    .hero_container {
+        grid-template-areas: 
+            "img"
+            "text"
+        ;
+        grid-template-columns: 100%;
+        width: 100%;
+    }
+
+    .desktop_logo {
+        display: none;
+    }
+
+    .main_text {
+        grid-area: text;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .img_container {
+        grid-area: img;
+    }
+
+    .img_container .mobile_hero_img {
+        display: block;
+        width: 100%;
+    }
+
+    .img_container .desktop_hero_img {
+        display: none;
+    }
+}
