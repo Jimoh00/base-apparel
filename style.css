@@ -47,6 +47,7 @@ body {
     grid-template-columns: repeat(2, 50%);
     justify-content: space-between;
     align-items: center;
+    background: url(images/bg-pattern-desktop.svg);
     width: 100%;
 }
 
